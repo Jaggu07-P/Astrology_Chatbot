@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Astrology Chatbot</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f0f8ff; }
+    h1 { color: #4B0082; }
+    label, input { display: block; margin-top: 10px; }
+    button { margin-top: 20px; padding: 10px 15px; }
+    .result { margin-top: 30px; padding: 15px; background: #e6e6fa; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>🌟 Astrology Chatbot</h1>
+  <form method="POST" action="/">
+    <label>Date of Birth (yyyy-mm-dd):</label>
+    <input type="date" name="dob" required>
+
+    <label>Time of Birth (HH:MM):</label>
+    <input type="time" name="tob" required>
+
+    <label>Place of Birth:</label>
+    <input type="text" name="place" required>
+
+    <label>Ask a Question:</label>
+    <input type="text" name="query" placeholder="e.g., What does my day look like?" required>
+
+    <button type="submit">Get Horoscope</button>
+  </form>
+
+  {% if result %}
+    <div class="result">
+      <strong>🌟 Horoscope Interpretation:</strong><br>
+      {{ result }}
+    </div>
+  {% endif %}
+</body>
+</html>
